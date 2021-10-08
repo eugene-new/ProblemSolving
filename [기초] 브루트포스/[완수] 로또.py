@@ -1,6 +1,41 @@
+# import sys
+# sys.stdin = open('input_files/로또.txt')
+# from itertools import combinations
+#
+#
+# while True:
+#     lst = list(map(int, input().split()))
+#     k = lst[0]
+#     if k == 0:
+#         break
+#
+#     s = lst[1:]
+#     numbers = []
+#     for comb in combinations(s, 6):
+#         numbers.append(list(comb))
+#
+#     for number in numbers:
+#         print(*number)
+#     print()
+
+
 import sys
 sys.stdin = open('input_files/로또.txt')
-from itertools import permutations
+
+
+def dfs(start, ans):
+
+    if len(ans) == 6:
+        print(ans)
+        return
+
+    for i in range(start, k):
+        if visited[i] == 0:
+            visited[i] = 1
+            ans.append(s[i])
+            dfs(i+1, ans)
+            ans.pop()
+            visited[i] = 0
 
 
 while True:
@@ -10,20 +45,13 @@ while True:
         break
 
     s = lst[1:]
-    numbers = []
-    for perm in permutations(s, 6):
-        numbers.append(sorted(list(perm)))
 
-    numbers = list(set([tuple(set(number)) for number in numbers]))
-    new = []
-    for number in numbers:
-        new.append(list(number))
-
-    for i in new:
-        i.sort()
-
-    new = sorted(new, key=lambda x:x[0])
-    for i in new:
-        print(*i)
+    visited = [0] * k
+    dfs(0, [])
+    print(k, s)
     print()
+
+
+
+
 
