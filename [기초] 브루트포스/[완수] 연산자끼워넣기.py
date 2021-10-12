@@ -20,13 +20,13 @@ def dfs(idx, tmp):
 
 def operation(a, b, oper_idx):
     if oper_idx == 0:
-        return a+b
+        return int(a+b)
     if oper_idx == 1:
-        return a-b
+        return int(a-b)
     if oper_idx == 2:
-        return a*b
+        return int(a*b)
     if oper_idx == 3:
-        return a//b
+        return int(a/b)
 
 
 N = int(input())
@@ -34,11 +34,16 @@ numbers = list(map(int, input().split()))
 # [+, -, *, //]
 operators = list(map(int, input().split()))
 
-maximum = float('-inf')
-minimum = float('inf')
+maximum = -1e9
+minimum = 1e9
 
 dfs(0, numbers[0])
 print(maximum)
 print(minimum)
 
-
+"""
+'//' 연산사 사용에 유의하자
+(-1 // 5) = 0
+int(-1/5) = -1
+음수의 경우 0 return
+"""
