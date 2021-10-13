@@ -8,6 +8,7 @@ friend_list = [[] for _ in range(2005)]
 visited = [False] * 2005
 answer = 0
 
+
 def dfs(current, depth):
     global answer
     if answer == 1:
@@ -33,6 +34,7 @@ for i in range(M):
 
 for i in range(N):
     visited[i] = True
-    dfs(i, 1)
+    dfs(i, 0)
+    visited[i] = False
 
 print(answer)
