@@ -1,0 +1,12 @@
+10.14
+
+1. 13023_ABCDE
+풀이
+- DFS 이용해 완전탐색, depth가 4 이상일 때 return
+- ans == 1이 나오면 return (Backtracking)
+오답노트
+- 시작점 v를 찾기 위해 for문을 돌 때 visited list 초기화를 안해줘서 계속 틀렸다...
+- depth가 4 이상임을 찾기 위해 시작점을 0으로 할 지 1로 할 지 잘 생각해서 해야한다.
+
+
+---
