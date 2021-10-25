@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input_files/ 벽부수고이동하기.txt')
+sys.stdin = open('input_files/벽부수고이동하기.txt')
 from collections import deque
 
 # 우, 하, 좌, 상
